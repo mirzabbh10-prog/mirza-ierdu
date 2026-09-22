@@ -1,0 +1,168 @@
+:root{
+    --ink:#1B2A3D;
+    --paper:#F3EEE3;
+    --paper-2:#EAE3D3;
+    --gold:#C08A2E;
+    --sage:#5C7A63;
+    --line:#D8CFB8;
+    --text:#26221B;
+    --text-soft:#5A5346;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:'Inter',sans-serif;
+    background:var(--paper-2);
+    color:var(--text);
+    line-height:1.6;
+  }
+  .sheet{
+    max-width:800px;
+    margin:32px auto;
+    background:var(--paper);
+    box-shadow:0 20px 60px rgba(27,42,61,0.18);
+  }
+
+  /* HEADER */
+  header{
+    background:var(--ink);
+    color:#fff;
+    padding:40px 46px;
+    display:flex;
+    align-items:center;
+    gap:28px;
+  }
+  .photo-wrap{
+    flex:0 0 auto;
+    width:128px;height:128px;
+    border-radius:50%;
+    overflow:hidden;
+    border:3px solid var(--gold);
+  }
+  .photo-wrap img{width:100%;height:100%;object-fit:cover;display:block;}
+  header h1{
+    font-family:'Source Serif 4',serif;
+    font-size:1.9rem;
+    margin:0 0 4px;
+    letter-spacing:0.01em;
+  }
+  header .role{
+    font-size:0.9rem;
+    color:var(--gold);
+    font-weight:600;
+    margin-bottom:14px;
+  }
+  .contact-row{display:flex;gap:22px;flex-wrap:wrap;font-size:0.85rem;color:#DDE3E9;}
+  .contact-row a{color:#DDE3E9;text-decoration:none;}
+
+  /* MAIN */
+  .main{padding:40px 46px;}
+  section{margin-bottom:34px;}
+  section h2{
+    font-family:'Source Serif 4',serif;
+    font-size:1.2rem;
+    font-weight:600;
+    color:var(--ink);
+    margin:0 0 14px;
+    padding-bottom:8px;
+    border-bottom:2px solid var(--gold);
+    display:inline-block;
+  }
+  .objective{
+    font-size:0.98rem;
+    color:var(--text-soft);
+    max-width:70ch;
+  }
+
+  .comp-grid{display:grid;gap:14px;}
+  .comp{
+    padding:14px 18px;
+    border-left:3px solid var(--sage);
+    background:rgba(92,122,99,0.06);
+  }
+  .comp h3{
+    font-size:0.95rem;margin:0 0 6px;color:var(--ink);
+    font-family:'Source Serif 4',serif;font-weight:600;
+  }
+  .comp p{margin:0;font-size:0.88rem;color:var(--text-soft);}
+
+  .timeline{position:relative;padding-left:26px;}
+  .timeline::before{
+    content:"";position:absolute;left:6px;top:6px;bottom:6px;
+    width:2px;background:var(--line);
+  }
+  .tl-item{position:relative;margin-bottom:24px;}
+  .tl-item:last-child{margin-bottom:0;}
+  .tl-item::before{
+    content:"";position:absolute;left:-26px;top:4px;
+    width:11px;height:11px;border-radius:50%;
+    background:var(--gold);border:2px solid var(--paper);
+    box-shadow:0 0 0 2px var(--gold);
+  }
+  .tl-item h3{
+    font-size:1rem;margin:0 0 2px;color:var(--ink);
+    font-family:'Source Serif 4',serif;font-weight:600;
+  }
+  .tl-item .org{font-size:0.82rem;color:var(--sage);font-weight:600;margin-bottom:6px;}
+  .tl-item p{margin:0;font-size:0.88rem;color:var(--text-soft);max-width:64ch;}
+
+  .edu-grid{display:grid;gap:14px;}
+  .edu-item{
+    display:flex;justify-content:space-between;align-items:baseline;
+    padding:12px 18px;border-left:3px solid var(--gold);
+    background:rgba(192,138,46,0.06);
+    flex-wrap:wrap;gap:6px;
+  }
+  .edu-item .left .deg{font-size:0.95rem;font-weight:600;color:var(--ink);font-family:'Source Serif 4',serif;}
+  .edu-item .left .school{font-size:0.83rem;color:var(--text-soft);margin-top:2px;}
+  .edu-item .right{font-size:0.8rem;color:var(--sage);font-weight:600;white-space:nowrap;}
+
+  .lead-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  .lead-item h3{
+    font-size:0.92rem;margin:0 0 6px;color:var(--ink);
+    font-family:'Source Serif 4',serif;font-weight:600;
+  }
+  .lead-item p{margin:0;font-size:0.85rem;color:var(--text-soft);}
+
+  .sport-list{list-style:none;margin:0;padding:0;columns:2;column-gap:24px;}
+  .sport-list li{
+    font-size:0.87rem;color:var(--text-soft);
+    padding:6px 0;border-bottom:1px dashed var(--line);
+    break-inside:avoid;
+  }
+
+  .skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  .skills-grid h3{
+    font-size:0.85rem;margin:0 0 6px;color:var(--sage);font-weight:600;
+  }
+  .skills-grid p{margin:0;font-size:0.87rem;color:var(--text-soft);}
+
+  .ref-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+  .ref-item{font-size:0.86rem;color:var(--text-soft);}
+  .ref-item .name{font-weight:600;color:var(--ink);font-size:0.92rem;}
+  .ref-item .title{color:var(--sage);font-size:0.8rem;margin-bottom:4px;}
+
+  @media (max-width:640px){
+    .sheet{margin:0;}
+    header{flex-direction:column;text-align:center;padding:32px 24px;}
+    .contact-row{justify-content:center;}
+    .main{padding:32px 24px;}
+    .lead-grid,.ref-grid,.skills-grid{grid-template-columns:1fr;}
+    .sport-list{columns:1;}
+    .edu-item{flex-direction:column;}
+  }
+  @media print{
+    body{background:#fff;}
+    .sheet{box-shadow:none;margin:0;}
+  }
+
+  .skills-photo-wrap{
+    flex:0 0 auto;
+    width:96px;height:96px;
+    border-radius:12px;
+    overflow:hidden;
+    border:2px solid var(--gold);
+    margin-right:6px;
+  }
+  .skills-photo-wrap img{width:100%;height:100%;object-fit:cover;display:block;}
+  .skills-section-inner{display:flex;align-items:flex-start;gap:22px;flex-wrap:wrap;}
